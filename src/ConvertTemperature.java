@@ -1,18 +1,6 @@
 import java.util.Scanner;
 
 public class ConvertTemperature {
-
-    public static double celsiusToFahrenheit(double celsius) {
-        double fahrenheit = (9 / 5) * celsius + 32;
-        return fahrenheit;
-    }
-
-    public static double FahrenheitToCelsius(double fahrenheit) {
-        double celsius = (5 / 9) * (fahrenheit - 32);
-        return celsius;
-    }
-
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double fahrenheit;
@@ -29,12 +17,28 @@ public class ConvertTemperature {
 
             switch (choice) {
                 case 1:
+                    System.out.println("Enter fahrenheit: ");
+                    fahrenheit = sc.nextDouble();
+                    System.out.println("Fahrenheit to Celsius: " + fahrenheitToCelsius(fahrenheit));
                     break;
                 case 2:
+                    System.out.println("Enter Celsius: ");
+                    celsius = sc.nextDouble();
+                    System.out.println("Celsius to Fahrenheit: " + celsiusToFahrenheit(celsius));
                     break;
                 case 0:
                     System.exit(0);
             }
-        } while (choice != 0)
+        } while (choice != 0);
+    }
+
+    public static double celsiusToFahrenheit(double celsius) {
+        double fahrenheit = (9.0 / 5) * celsius + 32;
+        return fahrenheit;
+    }
+
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        double celsius = (5.0 / 9) * (fahrenheit - 32);
+        return celsius;
     }
 }
